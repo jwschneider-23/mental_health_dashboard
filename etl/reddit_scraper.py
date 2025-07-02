@@ -12,17 +12,19 @@ import praw
 import pandas as pd
 from datetime import datetime
 
-print(reddit.user.me())
-print('OLA')
+
 
 
 reddit = praw.Reddit(
-    client_id="JpyGLs2DejwOVf0FI-FwiA",
-    client_secret="AKWR_wzr67IFxHl6LP4wN6XCyCmapw",
-    user_agent="mental_health_scraper by u/SufficientNumber8454"
+    client_id = "0yfgedB6kJSLTem6tDN3GA",
+    client_secret = "8vel5YCqH0ZdfcJC4n-UpPEjHSabjA",
+    user_agent = "mental_health_scraper by u/SufficientNumber8454"
 )
 
-def fetch_posts(subreddit='mentalhealth', limit=100):
+print(reddit.read_only)
+print(reddit.user.me())
+
+def fetch_posts(subreddit='technology', limit=100):
     posts = []
     for post in reddit.subreddit(subreddit).hot(limit=limit):
         posts.append({
